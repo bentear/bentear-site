@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'Monument Grotesk';
+  src: url('/fonts/MonumentGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11pt;
+}
+
+body {
+  font-family: 'Monument Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.2;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+.spacer-lg {
+  height: 1rem;
+}
+
+/* Cascade animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.content > *:nth-child(1) { animation-delay: 0.0s; }
+.content > *:nth-child(2) { animation-delay: 0.075s; }
+.content > *:nth-child(3) { animation-delay: 0.15s; }
+.content > *:nth-child(4) { animation-delay: 0.225s; }
+.content > *:nth-child(5) { animation-delay: 0.3s; }
+.content > *:nth-child(6) { animation-delay: 0.375s; }
+.content > *:nth-child(7) { animation-delay: 0.45s; }
+.content > *:nth-child(8) { animation-delay: 0.525s; }
+.content > *:nth-child(9) { animation-delay: 0.6s; }
+.content > *:nth-child(10) { animation-delay: 0.675s; }
+
+a {
+  color: rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  transform: scale(0.95);
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: default;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Play Button - Glassy Pill */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.play-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-button svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+  margin-left: 3px;
+}
+
+/* Custom Controls */
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-controls:hover {
+  opacity: 1;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.control-btn:hover {
+  opacity: 1;
+}
+
+.control-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+
+/* Progress Bar - Rounded pill that grows */
+.progress-container {
+  flex: 1;
+  height: 16px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  width: 0%;
+  min-width: 16px;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 11pt;
+  }
+  
+  .container {
+    padding: 3rem 1.25rem 2rem;
+  }
+}
