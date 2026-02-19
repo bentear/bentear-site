@@ -7,6 +7,7 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [progress, setProgress] = useState(0)
+  const [videoReady, setVideoReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
 
@@ -71,6 +72,10 @@ export default function Home() {
     setIsPlaying(false)
   }
 
+  const handleVideoCanPlay = () => {
+    setVideoReady(true)
+  }
+
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && modalOpen) {
@@ -96,7 +101,7 @@ export default function Home() {
 
           <p>I build brands and product experiences that accelerate traction for companies doing hard, important things.</p>
 
-          <p>I lead strategy and go-to-market for high-growth startups in AI infrastructure, web3, space, and consumer health at <a href="https://thisislandscape.com">Landscape</a>, and manage editorial output for the literary journal <a href="https://bidoun.org">Bidoun</a>.</p>
+          <p>I work on strategy and GTM with high-growth startups in AI infrastructure, web3, space, and consumer health at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a>, and manage editorial output for the literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
 
           <p>Previously I was a director at ToftH, a think-tank consulting on product strategy with R&D teams at Google X, Meta, Microsoft, and Snap.</p>
 
@@ -118,7 +123,7 @@ export default function Home() {
         }}
       >
         <div className="modal-content">
-          <div className={`video-container ${!isPlaying ? 'paused' : ''}`}>
+          <div className={`video-container ${!isPlaying ? 'paused' : ''} ${!videoReady ? 'loading' : ''}`}>
             <video 
               ref={videoRef}
               preload="metadata"
@@ -126,6 +131,7 @@ export default function Home() {
               loop
               onTimeUpdate={handleTimeUpdate}
               onEnded={handleVideoEnd}
+              onCanPlay={handleVideoCanPlay}
               onClick={togglePlay}
             >
               <source src="/reel.mp4" type="video/mp4" />
