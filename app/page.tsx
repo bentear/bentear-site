@@ -71,7 +71,15 @@ export default function Home() {
 
   const handleVideoEnd = () => {
     setIsPlaying(false)
-    closeModal()
+    // On mobile, loop the video. On desktop, close modal.
+    const isMobile = window.innerWidth <= 768
+    if (isMobile && videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.play()
+      setIsPlaying(true)
+    } else {
+      closeModal()
+    }
   }
 
   const handleVideoCanPlay = () => {
