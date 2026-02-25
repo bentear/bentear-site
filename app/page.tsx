@@ -7,14 +7,12 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [progress, setProgress] = useState(0)
-  const [videoReady, setVideoReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
 
   const openModal = () => {
     setModalOpen(true)
     document.body.style.overflow = 'hidden'
-    // Autoplay after modal opens
     setTimeout(() => {
       if (videoRef.current) {
         videoRef.current.play()
@@ -30,7 +28,6 @@ export default function Home() {
     }
     setIsPlaying(false)
     setProgress(0)
-    setVideoReady(false)
     setModalOpen(false)
     document.body.style.overflow = ''
   }
@@ -70,17 +67,8 @@ export default function Home() {
     }
   }
 
-  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (videoRef.current && progressRef.current) {
-      const rect = progressRef.current.getBoundingClientRect()
-      const percent = (e.clientX - rect.left) / rect.width
-      videoRef.current.currentTime = percent * videoRef.current.duration
-    }
-  }
-
   const handleVideoEnd = () => {
     setIsPlaying(false)
-    // On mobile, loop the video. On desktop, close modal.
     const isMobile = window.innerWidth <= 768
     if (isMobile && videoRef.current) {
       videoRef.current.currentTime = 0
@@ -89,10 +77,6 @@ export default function Home() {
     } else {
       closeModal()
     }
-  }
-
-  const handleVideoCanPlay = () => {
-    setVideoReady(true)
   }
 
   useEffect(() => {
@@ -120,7 +104,7 @@ export default function Home() {
 
           <p>I build brands and product experiences that accelerate traction for companies doing hard, important things.</p>
 
-          <p>I work on strategy and GTM with high-growth startups in AI infrastructure, web3, space, and consumer health at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a>, and manage editorial output for the literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
+          <p>I work on strategy and GTM with high-growth startups in AI infrastructure, web3, consumer health, and space at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a>. I also manage editorial output for the literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
 
           <p>Previously I was a director at ToftH, a think-tank consulting on product strategy with R&D teams at Google X, Meta, Microsoft, and Snap.</p>
 
