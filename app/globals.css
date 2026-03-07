@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Monument Grotesk';
-  src: url('/fonts/MonumentGrotesk-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +5,11 @@
 }
 
 html {
-  font-size: 11pt;
+  font-size: 13px;
 }
 
 body {
-  font-family: 'Monument Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: sans-serif;
   font-weight: 400;
   background-color: #ffffff;
   color: rgba(0, 0, 0, 0.75);
@@ -169,37 +161,6 @@ a:hover {
   fill: #fff;
 }
 
-/* Close Button - Mobile only */
-.close-btn {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-  z-index: 10;
-}
-
-.close-btn:hover {
-  opacity: 1;
-}
-
-.close-btn svg {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
-}
-
-@media (max-width: 768px) {
-  .close-btn {
-    display: flex;
-  }
-}
-
 /* Mobile - fullscreen video */
 @media (max-width: 768px) {
   .modal-content {
@@ -224,104 +185,9 @@ a:hover {
   }
 }
 
-/* Play Button - Glassy Pill */
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: none;
-  border-radius: 32px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
-  z-index: 10;
-}
-
-.play-button:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  background: rgba(255, 255, 255, 0.35);
-}
-
-.play-button.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.play-button svg {
-  width: 28px;
-  height: 28px;
-  fill: #fff;
-  margin-left: 3px;
-}
-
-/* Custom Controls */
-.video-controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 20px 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.video-controls:hover {
-  opacity: 1;
-}
-
-.control-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.control-btn:hover {
-  opacity: 1;
-}
-
-.control-btn svg {
-  width: 22px;
-  height: 22px;
-  fill: #fff;
-}
-
-/* Progress Bar - Rounded pill that grows */
-.progress-container {
-  flex: 1;
-  height: 16px;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-}
-
-.progress-bar {
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  width: 0%;
-  min-width: 16px;
-}
-
 @media (max-width: 480px) {
   html {
-    font-size: 10pt;
+    font-size: 12px;
   }
   
   .container {
