@@ -102,7 +102,7 @@ export default function Home() {
           <div className="spacer"></div>
           <div className="spacer"></div>
 
-          <p>I build brands and positioning that turn product velocity into market momentum.</p>
+          <p>I build brands and experiences that turn product velocity into market momentum.</p>
 
           <p>I work on strategy and GTM with high-growth startups in AI infrastructure, web3, consumer health, and space at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a>. I also manage editorial output for the literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
 
