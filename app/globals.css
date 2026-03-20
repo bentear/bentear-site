@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Monument Grotesk';
+  src: url('/fonts/MonumentGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +13,11 @@
 }
 
 html {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Monument Grotesk', sans-serif;
   font-weight: 400;
   background-color: #ffffff;
   color: rgba(0, 0, 0, 0.75);
@@ -33,6 +41,10 @@ p {
 
 .spacer-lg {
   height: 1rem;
+}
+
+.indent {
+  padding-left: 5ch;
 }
 
 /* Cascade animation */
@@ -72,9 +84,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.5px;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 /* Modal Overlay */

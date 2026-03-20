@@ -100,21 +100,22 @@ export default function Home() {
           <p>Ben Tear</p>
 
           <div className="spacer"></div>
-          <div className="spacer"></div>
 
-          <p>I build brands and experiences that turn product velocity into market momentum.</p>
+          <div className="indent">
+            <p>I build brands and experiences that turn product velocity into market momentum.</p>
 
-          <p>I work on strategy and GTM with high-growth startups in AI infrastructure, web3, consumer health, and space at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a>. I also manage editorial output for the literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
+            <p>I work on strategy, GTM, and innovation sprints at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a> with high-growth startups in AI infrastructure, web3, consumer health, and space. I also manage editorial output for the art and literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
 
-          <p>Previously I was a director at <a href="https://tofth.wip.llc/" target="_blank" rel="noopener noreferrer">ToftH</a>, a think-tank consulting on product strategy with R&D teams at Google X, Meta, Microsoft, and Snap.</p>
+            <p>Previously I was a director at <a href="https://tofth.wip.llc/" target="_blank" rel="noopener noreferrer">ToftH</a>, a think-tank consulting on product strategy with R&D teams at Google X, Meta, Microsoft, and Snap.</p>
 
-          <div className="spacer-lg"></div>
+            <div className="spacer-lg"></div>
 
-          <p><a onClick={openModal} className="sizzle-reel" style={{ fontWeight: 500 }}>Sizzle Reel</a></p>
+            <p><a onClick={openModal} className="sizzle-reel" style={{ fontWeight: 500 }}>Sizzle Reel</a></p>
 
-          <div className="spacer-lg"></div>
+            <div className="spacer-lg"></div>
 
-          <p>You can reach me by email <a href="mailto:benjamin.tear@gmail.com">here</a>.</p>
+            <p>You can reach me by email <a href="mailto:benjamin.tear@gmail.com">here</a>.</p>
+          </div>
         </div>
       </div>
 
