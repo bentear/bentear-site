@@ -43,10 +43,6 @@ p {
   height: 1rem;
 }
 
-.indent {
-  padding-left: 5ch;
-}
-
 /* Cascade animation */
 @keyframes fadeInUp {
   from {
@@ -197,7 +193,7 @@ a:hover {
 
 @media (max-width: 480px) {
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .container {
