@@ -83,6 +83,10 @@ a:hover {
   text-decoration: none;
 }
 
+.sizzle-reel {
+  font-weight: 500;
+}
+
 /* Modal Overlay */
 .modal-overlay {
   position: fixed;

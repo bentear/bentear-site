@@ -2,13 +2,23 @@
 
 import { useState, useRef, useEffect } from 'react'
 
+const headlines = [
+  "I build brands and positioning that turn product velocity into market momentum.",
+  "I build brands and product experiences that accelerate traction for frontier technologies."
+]
+
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [progress, setProgress] = useState(0)
+  const [headline, setHeadline] = useState(headlines[0])
   const videoRef = useRef<HTMLVideoElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setHeadline(headlines[Math.floor(Math.random() * headlines.length)])
+  }, [])
 
   const openModal = () => {
     setModalOpen(true)
@@ -102,7 +112,7 @@ export default function Home() {
           <div className="spacer"></div>
           <div className="spacer"></div>
 
-          <p>I build brands and experiences that turn product velocity into market momentum.</p>
+          <p>{headline}</p>
 
           <p>I work on strategy and GTM at <a href="https://thisislandscape.com" target="_blank" rel="noopener noreferrer">Landscape</a> with high-growth startups in AI infrastructure, web3, consumer health, and space. I also manage editorial output for the art and literary journal <a href="https://bidoun.org" target="_blank" rel="noopener noreferrer">Bidoun</a>.</p>
 
@@ -110,7 +120,7 @@ export default function Home() {
 
           <div className="spacer-lg"></div>
 
-          <p><a onClick={openModal} className="sizzle-reel" style={{ fontWeight: 500 }}>Sizzle Reel</a></p>
+          <p><a onClick={openModal} className="sizzle-reel">Sizzle Reel</a></p>
 
           <div className="spacer-lg"></div>
 
@@ -130,6 +140,8 @@ export default function Home() {
             <video 
               ref={videoRef}
               preload="auto"
+              playsInline
+              webkit-playsinline="true"
               onTimeUpdate={handleTimeUpdate}
               onEnded={handleVideoEnd}
               onClick={handleVideoClick}
