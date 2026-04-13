@@ -79,14 +79,7 @@ export default function Home() {
 
   const handleVideoEnd = () => {
     setIsPlaying(false)
-    const isMobile = window.innerWidth <= 768
-    if (isMobile && videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play()
-      setIsPlaying(true)
-    } else {
-      closeModal()
-    }
+    closeModal()
   }
 
   useEffect(() => {
