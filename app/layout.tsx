@@ -3,13 +3,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Ben Tear',
-  description: 'I build brands and product experiences that accelerate traction for companies doing hard, important things.',
+  description: 'I build brands and experiences that turn product velocity into market momentum.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.svg',
   },
   openGraph: {
     title: 'Ben Tear',
-    description: 'I build brands and product experiences that accelerate traction for companies doing hard, important things.',
+    description: 'I build brands and experiences that turn product velocity into market momentum.',
     url: 'https://bentear.info',
     siteName: 'Ben Tear',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ben Tear',
-    description: 'I build brands and product experiences that accelerate traction for companies doing hard, important things.',
+    description: 'I build brands and experiences that turn product velocity into market momentum.',
     images: ['/og-image.jpg'],
   },
 }
