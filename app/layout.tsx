@@ -4,9 +4,6 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Ben Tear',
   description: 'I build brands and experiences that turn product velocity into market momentum.',
-  icons: {
-    icon: '/favicon.svg',
-  },
   openGraph: {
     title: 'Ben Tear',
     description: 'I build brands and experiences that turn product velocity into market momentum.',
